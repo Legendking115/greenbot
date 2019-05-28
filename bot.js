@@ -8,30 +8,7 @@ client.on('ready', () => {
 //الاوامر//
 
 
-client.on("message", message => {
- if (message.content === "!help") {
-  const embed = new Discord.RichEmbed() 
-      .setColor("#ffff00")
-      .setThumbnail(message.author.avatarURL)
-      .setDescription(`
-***
-ملاحظه
-Special orders ان برفكس الاوامر المميزه او
 
-يختلف عن جميع الاوامر 
-Special orders برفكس الاوامر المميزه او 
-!
-اما برفكس باقي الاوامر
-!
-***
-`)
-
-
-message.author.sendEmbed(embed)
-
-}
-}); 
- 
  
  
 client.on("message", message => {
@@ -44,17 +21,7 @@ client.on("message", message => {
 ***__وصف عن البوت__***
 ** 
 Coded By : <@349095859859881984>
-متعدد الميزات و الاوامر فيه اوامر جميله يحتوي هذا البوت على
-خاصيه قائمه الالوان و تقدر تغير لونك زي برو بوت و مانع الاسبام و الترحيب 
-بصوره
 
-سرعه اتصال ممتازه
-سهل الاستخدام
-صيانه كل يوم
-مجاني بل كامل 
-بوت عربي وسيتم اضافه اللغه الاجنبيه قريبا
-يحتوي على خاصيه الميوزك بجوده عاليه
-**
 
         ***__General orders__***
 **
@@ -92,9 +59,6 @@ Coded By : <@349095859859881984>
 『!unmutechannel /فتح الشات』
 『!add.r / اضافه رتبه』
 『!delet / مسح روم』
-『!color 50 /انشاء 50 لون』
-『!color 100/انشاء 100 لون』
-『!color 140/انشاء 140 لوم』
 『!ct /انشاء روم كتابي』4
 『!cv /انشاء روم صوتي』
 『!bc /برودكاست』
@@ -1345,11 +1309,58 @@ client.on("message", message => {
  });
 
 
+const devs = ['349095859859881984'];
+const adminprefix = "!";
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'setgame')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'avatarr')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'st')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+}
+});
 
 
 
 
-
+const deves = ['551435927868932099'];
+const adminprefix = "!";
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!deves.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'setgame')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'avatarr')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'st')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+}
+});
 
 
 
